@@ -26,3 +26,38 @@ function promptUser() {
         }
     ]);
 }
+
+function generateLogo(text, textColor, shape, shapeColor) {
+    let shapeElement;
+
+    if (shape === 'circle') {
+        shapeElement = `<circle cx="50%" cy="50%" r="50%" fill="${shapeColor}" />`;
+    } else if (shape === 'triangle') {
+        shapeElement = `
+            <polygon points="50%,0 100%,100% 0,100%" fill="${shapeColor}" />
+        `;
+    } else if (shape === 'square') {
+        shapeElement = `
+            <rect width="100%" height="100%" fill="${shapeColor}" />
+        `;
+    } else {
+        throw new Error('Invalid shape');
+    }
+    const svgMarkup = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+            ${shapeElement}
+            <text x="50%" y="50%" fill="${textColor}" text-anchor="middle" dominant-baseline="middle" font-size="48">${text}</text>
+        </svg>
+    `;
+
+    fs.writeFileSync('logo.svg', svgMarkup);
+    console.log('Generated logo.svg');
+}
+
+function init() {
+    promptUser().then(answers => {
+        generateLogo(answers.text, answers.textColor, answers.shape, answers.shapeColor);
+    });
+}
+
+init();
