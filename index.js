@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const path = require('path');
 
 function promptUser() {
     return inquirer.prompt([
@@ -50,8 +51,9 @@ function generateLogo(text, textColor, shape, shapeColor) {
         </svg>
     `;
 
-    fs.writeFileSync('logo.svg', svgMarkup);
-    console.log('Generated logo.svg');
+    const filePath = path.join('examples', 'logo.svg');
+    fs.writeFileSync(filePath, svgMarkup);
+    console.log(`Generated ${filePath}`);
 }
 
 function init() {
