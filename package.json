@@ -1,14 +1,19 @@
 {
-    "name": "01-stu_tdd-dissect",
-    "version": "1.0.0",
-    "description": "",
-    "main": "shapes.js",
-    "scripts": {
-      "test": "jest"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-      "jest": "^24.9.0"
-    }
+  "name": "logo-geni",
+  "version": "1.0.0",
+  "description": "A command line logo generator. Input the logo specs you want and generate your logo.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
   }
+}

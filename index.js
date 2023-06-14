@@ -1,4 +1,4 @@
-const init = require(/lib/shapes.js)
+const { promptUser, generateLogo } = require('./lib/shapes.js');
 
 function init() {
     promptUser().then(answers => {
