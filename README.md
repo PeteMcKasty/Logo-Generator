@@ -16,3 +16,9 @@ This application generates a basic logo based on pre-set options from the integr
 ### Usage
 
 This application will generate a logo.
+
+### Preview
+
+https://drive.google.com/file/d/10AAgg1yvDjlvSOuaF7uucyxGFE4JDI9U/view?usp=sharing
+
+<img src="./examples/logo.jpg" alt="Sample PNM logo with triangle">
